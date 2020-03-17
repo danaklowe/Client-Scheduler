@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="view_controller.ReportsScreenController">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" text="Reports">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="48.0" text="1. Appointment types by month :" />
+      <Label layoutX="18.0" layoutY="198.0" text="2. Consultant schedules:" />
+      <TableView fx:id="appointmentTbl" layoutX="204.0" layoutY="219.0" prefHeight="152.0" prefWidth="579.0">
+         <columns>
+            <TableColumn fx:id="customerCol" prefWidth="165.0" text="Customer" />
+            <TableColumn fx:id="typeCol" prefWidth="127.0" text="Type" />
+            <TableColumn fx:id="dateCol" prefWidth="111.0" text="Date" />
+            <TableColumn fx:id="startCol" prefWidth="86.0" text="Start Time" />
+            <TableColumn fx:id="endCol" prefWidth="88.0" text="End Time" />
+         </columns>
+      </TableView>
+      <ComboBox fx:id="consultantCB" layoutX="40.0" layoutY="243.0" prefWidth="150.0" promptText="Consultant..." />
+      <GridPane layoutX="289.0" layoutY="48.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="113.0" minWidth="10.0" prefWidth="113.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="87.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Presentation :" />
+            <Label layoutX="10.0" layoutY="15.0" text="Consultation :" GridPane.rowIndex="1" />
+            <Label layoutX="10.0" layoutY="45.0" text="Scrum :" GridPane.rowIndex="2" />
+            <Label layoutX="10.0" layoutY="75.0" text="Miscellaneous :" GridPane.rowIndex="3" />
+            <Label fx:id="presentationLbl" layoutX="10.0" layoutY="105.0" GridPane.columnIndex="1" />
+            <Label fx:id="consultationLbl" layoutX="110.0" layoutY="15.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label fx:id="scrumLbl" layoutX="110.0" layoutY="45.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label fx:id="miscLbl" layoutX="110.0" layoutY="75.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+         </children>
+      </GridPane>
+      <ComboBox fx:id="monthCB" layoutX="40.0" layoutY="93.0" prefWidth="150.0" promptText="Month..." />
+      <Label layoutX="18.0" layoutY="405.0" text="3. Appointments by day of week :" />
+      <Button layoutX="637.0" layoutY="655.0" mnemonicParsing="false" onAction="#backBtnClicked" text="Back to Main Menu" />
+      <ComboBox fx:id="dayCB" layoutX="40.0" layoutY="438.0" prefWidth="150.0" promptText="Day of Week..." />
+      <TableView fx:id="appointmentTbl1" layoutX="34.0" layoutY="477.0" prefHeight="165.0" prefWidth="732.0">
+         <columns>
+            <TableColumn fx:id="customerCol1" prefWidth="165.0" text="Customer" />
+            <TableColumn fx:id="consultantCol1" prefWidth="154.0" text="Consultant" />
+            <TableColumn fx:id="typeCol1" prefWidth="127.0" text="Type" />
+            <TableColumn fx:id="dateCol1" prefWidth="111.0" text="Date" />
+            <TableColumn fx:id="startCol1" prefWidth="86.0" text="Start Time" />
+            <TableColumn fx:id="endCol1" prefWidth="88.0" text="End Time" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>
